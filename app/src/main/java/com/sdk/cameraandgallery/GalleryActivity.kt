@@ -27,6 +27,9 @@ class GalleryActivity : AppCompatActivity() {
         binding.btnDelete.setOnClickListener {
             clearImages()
         }
+        binding.btnAll.setOnClickListener {
+            startActivity(Intent(this, MultipleImagesActivity::class.java))
+        }
     }
     private fun pickImageFromOldGallery() {
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
@@ -66,6 +69,8 @@ class GalleryActivity : AppCompatActivity() {
         if (filesDir.isDirectory) {
             val listFiles = filesDir.listFiles() ?: emptyArray()
             for (list in listFiles) {
+                Log.d("AbsolutePath", list.absolutePath)
+                binding.imageView.setImageURI(null)
                 list.delete()
             }
         }
