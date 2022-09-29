@@ -23,16 +23,7 @@
         android:theme="@style/Theme.CameraAndGallery"
         tools:targetApi="31">
         <activity
-            android:name=".MultipleImagesActivity"
-            android:exported="false" />
-        <activity
-            android:name=".GalleryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CameraActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".ImageSaveActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
