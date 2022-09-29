@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -41,6 +42,8 @@ class MainActivity : AppCompatActivity() {
         binding.camera.setOnClickListener {
             startActivity(Intent(this, CameraActivity::class.java))
         }
+        val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, arrayOf("Uzbekistan", "Russia"))
+        binding.filledExposedDropdown.setAdapter(arrayAdapter)
     }
 
     private fun permissions() = ActivityCompat.checkSelfPermission(
